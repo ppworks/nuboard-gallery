@@ -40,10 +40,24 @@ group :doc do
 end
 
 group :development do
-  gem 'foreman'
+  # Debugs
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'hirb'
+  gem 'hirb-unicode'
   gem 'letter_opener'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  gem 'quiet_assets'
+  gem 'rack-mini-profiler'
+  gem 'tapp'
+  gem 'view_source_map'
+  gem 'i18n-tasks'
 end
 
 group :test, :development do
@@ -60,12 +74,6 @@ group :test, :development do
   gem 'capybara'
   gem 'poltergeist'
   gem 'launchy'
-
-  # Debug tool
-  gem 'pry'
-  gem 'tapp'
-  gem 'awesome_print'
-  gem 'spring', github: 'jonleighton/spring'
 
   # Testing tools
   gem "database_cleaner", '1.0.0.RC1'
