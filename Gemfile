@@ -75,7 +75,7 @@ group :test, :development do
   gem 'guard-sprockets2'
   gem 'json_expressions'
   gem 'launchy'
-  gem 'nokogiri', '1.5.10' # for :eq support
+  gem 'nokogiri'
   gem 'poltergeist'
   gem 'rails-db-resetup'
   gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
