@@ -25,7 +25,7 @@ module FeatureMacros
 
   def oauth_sign_in user, provider, force_reload = true
     back_path = page.current_path
-    auth = 
+    auth =
     {
       'uid' => '123456',
       'info' => {
