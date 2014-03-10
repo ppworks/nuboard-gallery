@@ -18,8 +18,8 @@ gem 'pg'
 gem 'active_decorator'
 gem 'rails-i18n'
 gem 'thin'
-gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'compass-rails'
+gem 'bootstrap-sass'
 
 group :doc do
   gem 'sdoc', require: false
