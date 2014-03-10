@@ -33,7 +33,7 @@ gem 'simple_form'
 gem 'rails-i18n'
 
 # Server
-gem 'thin'
+gem 'puma'
 
 group :doc do
   gem 'sdoc', require: false
@@ -58,6 +58,7 @@ group :development do
   gem 'tapp'
   gem 'view_source_map'
   gem 'i18n-tasks'
+  gem 'thin'
 end
 
 group :test, :development do

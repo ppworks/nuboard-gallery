@@ -1,2 +1,0 @@
-web: bundle exec rails s thin -p 3000
-guard: bundle exec guard --no-interactions
