@@ -33,13 +33,10 @@ Genuineblue::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
-  
+
   ActionMailer::Base.delivery_method = :test
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.deliveries = []
-  
-  # guard-rails-assets
-  config.assets.prefix = 'assets-test'
 
   # capybara
   config.action_controller.asset_host = ENV['TEST_ASSET_HOST'] if ENV['TEST_ASSET_HOST'].present?

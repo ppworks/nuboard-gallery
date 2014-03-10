@@ -1,75 +1,88 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.0'
+# Framework
+gem 'rails', '4.0.3'
+
+# Database
+gem 'pg'
+
+# Authentication
+gem 'devise'
+
+# Assets
+gem 'jbuilder', '~> 1.2'
+gem 'sass-rails',   '~> 4.0'
+gem 'coffee-rails', '~> 4.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'haml-rails'
+
+# Helpers
+gem 'active_decorator'
+
+# Models
+gem 'figaro'
+
+# Views
+gem 'bootstrap-sass'
+gem 'compass-rails'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'jbuilder', '~> 1.2'
-gem 'sass-rails',   '~> 4.0.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'haml-rails'
-gem 'figaro'
-gem 'warden'
-gem 'sqlite3'
 gem 'simple_form'
-gem 'pg'
-gem 'active_decorator'
-gem 'rails-i18n'
-gem 'thin'
-gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'kaminari'
+
+# Server
+gem 'puma'
 
 group :doc do
   gem 'sdoc', require: false
 end
 
 group :development do
-  gem 'foreman'
+  # Debugs
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'hirb'
+  gem 'hirb-unicode'
   gem 'letter_opener'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  gem 'quiet_assets'
+  gem 'rack-mini-profiler'
+  gem 'tapp'
+  gem 'view_source_map'
+  gem 'i18n-tasks'
+  gem 'thin'
 end
 
 group :test, :development do
-  # Rspec
-  gem 'rspec-rails'
+  # TDD
+  gem 'brakeman'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'delorean'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'delorean'
-  gem 'shoulda-matchers'
-
-  # Capybara
-  gem 'nokogiri', '1.5.10' # for :eq support
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'launchy'
-
-  # Debug tool
-  gem 'pry'
-  gem 'tapp'
-  gem 'awesome_print'
-  gem 'spring', github: 'jonleighton/spring'
-
-  # Testing tools
-  gem "database_cleaner", '1.0.0.RC1'
-  gem "brakeman"
-
-  # Capistrano
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'capistrano_colors'
-  gem 'rvm-capistrano'
-
-  # Guard
   gem 'guard-rspec', require: false
   gem 'guard-sprockets2'
-  gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
-
-  # Reset DB
+  gem 'json_expressions'
+  gem 'launchy'
+  gem 'nokogiri'
+  gem 'poltergeist'
   gem 'rails-db-resetup'
+  gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :production, :staging do
