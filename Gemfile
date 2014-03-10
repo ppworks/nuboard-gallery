@@ -26,6 +26,7 @@ gem 'figaro'
 # Views
 gem 'bootstrap-sass'
 gem 'compass-rails'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
