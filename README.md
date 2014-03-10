@@ -22,10 +22,10 @@ rake secret
 
 Fill in SECRET_TOKEN by the key above result.
 
-## Start foreman
+## Start guard
 
 ```
-$ foreman start -f Procfile.development
+$ guard
 ```
 
 ## heroku
