@@ -31,6 +31,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'rails-i18n'
+gem 'kaminari'
 
 # Server
 gem 'puma'
