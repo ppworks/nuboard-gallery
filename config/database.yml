@@ -1,11 +1,13 @@
 development: &development
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: genuineblue_development
+  encoding: utf8
 test:
   <<: *development
-  database: db/test.sqlite3
+  database: genuineblue_test
 production:
   <<: *development
-  database: db/production.sqlite3
+  database: genuineblue_production
+staging:
+  <<: *development
+  database: genuineblue_staging

@@ -14,6 +14,7 @@ gem 'figaro'
 gem 'warden'
 gem 'sqlite3'
 gem 'simple_form'
+gem 'pg'
 gem 'active_decorator'
 gem 'rails-i18n'
 gem 'thin'
@@ -69,4 +70,9 @@ group :test, :development do
 
   # Reset DB
   gem 'rails-db-resetup'
+end
+
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end

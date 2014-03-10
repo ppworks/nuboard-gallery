@@ -80,15 +80,15 @@ Genuineblue::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # mail
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.mandrillapp.com',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['MANDRILL_USERNAME'],
-    :password       => ENV['MANDRILL_APIKEY'],
-    :domain         => 'heroku.com',
-  }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
+  # mail
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['MAILTRAP_USER_NAME'],
+    :password => ENV['MAILTRAP_PASSWORD'],
+    :address => ENV['MAILTRAP_HOST'],
+    :port => ENV['MAILTRAP_PORT'],
+    :authentication => :plain
+  }
   config.action_mailer.default_url_options = { protocol: 'http', host: ENV['HOST'] }
 end
