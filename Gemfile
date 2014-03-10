@@ -8,7 +8,7 @@ gem 'rails', '4.0.3'
 gem 'pg'
 
 # Authentication
-gem 'warden'
+gem 'devise'
 
 # Assets
 gem 'jbuilder', '~> 1.2'
