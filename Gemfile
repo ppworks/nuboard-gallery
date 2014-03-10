@@ -1,25 +1,39 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
+# Framework
 gem 'rails', '4.0.3'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+
+# Database
+gem 'pg'
+
+# Authentication
+gem 'warden'
+
+# Assets
 gem 'jbuilder', '~> 1.2'
 gem 'sass-rails',   '~> 4.0'
 gem 'coffee-rails', '~> 4.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
-gem 'figaro'
-gem 'warden'
-gem 'sqlite3'
-gem 'simple_form'
-gem 'pg'
+
+# Helpers
 gem 'active_decorator'
-gem 'rails-i18n'
-gem 'thin'
-gem 'compass-rails'
+
+# Models
+gem 'figaro'
+
+# Views
 gem 'bootstrap-sass'
+gem 'compass-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+gem 'simple_form'
+gem 'rails-i18n'
+
+# Server
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
