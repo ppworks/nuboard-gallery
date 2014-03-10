@@ -62,37 +62,26 @@ group :development do
 end
 
 group :test, :development do
-  # Rspec
-  gem 'rspec-rails'
+  # TDD
+  gem 'brakeman'
+  gem 'capybara'
+  gem 'database_cleaner', '1.0.0.RC1'
+  gem 'delorean'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'delorean'
-  gem 'shoulda-matchers'
-
-  # Capybara
-  gem 'nokogiri', '1.5.10' # for :eq support
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'launchy'
-
-  # Testing tools
-  gem "database_cleaner", '1.0.0.RC1'
-  gem "brakeman"
-
-  # Capistrano
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'capistrano_colors'
-  gem 'rvm-capistrano'
-
-  # Guard
   gem 'guard-rspec', require: false
   gem 'guard-sprockets2'
-  gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
-
-  # Reset DB
+  gem 'json_expressions'
+  gem 'launchy'
+  gem 'nokogiri', '1.5.10' # for :eq support
+  gem 'poltergeist'
   gem 'rails-db-resetup'
+  gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :production, :staging do

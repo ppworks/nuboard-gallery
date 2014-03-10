@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'json_expressions/rspec'
 
 # Load all railties files
 Rails.application.railties.to_a { |r| r.eager_load! }
@@ -47,23 +48,25 @@ RSpec.configure do |config|
   # For capybara
   require 'capybara/rspec'
   require 'capybara/poltergeist'
+  Capybara.register_driver :rack_test do |app|
+      Capybara::RackTest::Driver.new(app, headers: {'HTTP_ACCEPT_LANGUAGE' => 'ja-JP'})
+  end
   Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, timeout: 120)
+    Capybara::Poltergeist::Driver.new(app, timeout: 360, headers: {'HTTP_ACCEPT_LANGUAGE' => 'ja-JP'})
   end
   Capybara.javascript_driver = :poltergeist
-  
+
   # For database cleaner
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do
     if example.metadata[:js]
-      DatabaseCleaner.strategy = :truncation
-    else
-      DatabaseCleaner.strategy = :transaction
-      DatabaseCleaner.start
+      page.driver.resize(1024, 2048)
     end
+    I18n.locale = (ENV['CI'] == 'ON') ? :en : :ja
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.after(:each) do
@@ -76,17 +79,19 @@ RSpec.configure do |config|
   # macro
   config.include RoutingResourcesMacros, type: :routing
   config.include FeatureMacros, type: :feature
+  config.include FactoryGirl::Syntax::Methods
+  config.include Delorean
 
   # metadata setting
   config.treat_symbols_as_metadata_keys_with_true_values = true
 
-  # master data
-  load "#{Rails.root}/db/seeds.rb"
-
-  # factory_girl
-  config.include FactoryGirl::Syntax::Methods
-
   config.before(:all) do
     FactoryGirl.reload
   end
+
+  # faker
+  Faker::Config.locale = :en
+
+  # master data
+  load "#{Rails.root}/db/seeds.rb"
 end
