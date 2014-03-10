@@ -66,7 +66,7 @@ group :test, :development do
   # TDD
   gem 'brakeman'
   gem 'capybara'
-  gem 'database_cleaner', '1.0.0.RC1'
+  gem 'database_cleaner'
   gem 'delorean'
   gem 'factory_girl'
   gem 'factory_girl_rails'
