@@ -26,6 +26,7 @@ module Genuineblue
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :en
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    I18n.enforce_available_locales = false
 
     config.generators do |g|
       g.view_specs false
