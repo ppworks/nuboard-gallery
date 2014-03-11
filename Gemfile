@@ -59,7 +59,6 @@ group :development do
   gem 'pry-stack_explorer'
   gem 'pry-debugger'
   gem 'quiet_assets'
-  gem 'rack-mini-profiler'
   gem 'tapp'
   gem 'view_source_map'
   gem 'i18n-tasks'
