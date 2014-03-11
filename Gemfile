@@ -25,6 +25,7 @@ gem 'active_decorator'
 
 # Models
 gem 'figaro'
+gem 'enumerize'
 
 # Views
 gem 'bootstrap-sass'
