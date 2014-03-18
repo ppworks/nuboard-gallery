@@ -52,7 +52,7 @@ RSpec.configure do |config|
       Capybara::RackTest::Driver.new(app, headers: {'HTTP_ACCEPT_LANGUAGE' => 'ja-JP'})
   end
   Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, timeout: 360, headers: {'HTTP_ACCEPT_LANGUAGE' => 'ja-JP'})
+    Capybara::Poltergeist::Driver.new(app, timeout: 360)
   end
   Capybara.javascript_driver = :poltergeist
 
@@ -66,6 +66,11 @@ RSpec.configure do |config|
       page.driver.resize(1024, 2048)
     end
     I18n.locale = (ENV['CI'] == 'ON') ? :en : :ja
+    if Capybara.current_driver == :poltergeist
+      # poltergeistでは
+      # Capybara::Poltergeist::Driver.new で指定できないので
+      Capybara.current_session.driver.headers = { 'Accept-Language' => I18n.locale.to_s }
+    end
     DatabaseCleaner.strategy = :truncation
   end
 
