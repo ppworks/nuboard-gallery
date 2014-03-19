@@ -1,0 +1,20 @@
+- content_for :title, t('nav.emails.finish')
+%header.page-heading
+  .container
+    %h1
+      %i.icon-footprint
+      = t('.title')
+.container.body.result.result-success
+  .inner
+    %h1
+      %i.fa.fa-check-circle
+      = t('.title')
+
+    = current_user.unconfirmed_email
+    宛に確認用メールを送信しました。確認してメールアドレスの承認を完了してください。
+
+  .section
+    %p.link
+      = link_to root_path do
+        %i.fa.fa-caret-right
+        ホームに戻る

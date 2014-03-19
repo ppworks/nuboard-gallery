@@ -9,6 +9,8 @@ gem 'pg'
 
 # Authentication
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # APIs
 gem 'bugsnag'
@@ -26,6 +28,10 @@ gem 'active_decorator'
 # Models
 gem 'figaro'
 gem 'enumerize'
+gem 'validates_email_format_of'
+gem 'unf'
+gem 'fog'
+gem 'mini_magick'
 
 # Views
 gem 'bootstrap-sass'

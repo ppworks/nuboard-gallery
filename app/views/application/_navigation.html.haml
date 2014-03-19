@@ -3,5 +3,13 @@
 
 .collapse.navbar-collapse
   %ul.nav.navbar-nav.navbar-right
-    %li
-      = link_to 'Menu', '#'
+    - if user_signed_in?
+      %li
+        %a.dropdown-toggle{data: {toggle: 'dropdown'}, href: "#"}
+          = current_user.name
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            = link_to destroy_user_session_path, method: :delete do
+              %i.fa.fa-sign-out
+              = t('nav.common.sign_out')

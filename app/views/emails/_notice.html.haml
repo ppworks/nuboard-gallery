@@ -1,0 +1,12 @@
+%section.section.well
+  %h2.text-primary
+    %i.icon-footprint
+    = t('.title')
+  %p.text-warning= t('.body_html')
+  = form_tag my_email_path, method: :put, class: 'form-inline', role: 'form' do
+    .form-group
+      = text_field_tag :email, nil, class: 'form-control email', placeholder: 'mail@example.com'
+    .form-group
+    = submit_tag t('emails.edit.form.submit'), class: 'btn btn-primary'
+  %p.help-block
+    = t('emails.edit.form.help')

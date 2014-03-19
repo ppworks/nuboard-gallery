@@ -1,0 +1,42 @@
+- content_for :title, t('nav.emails.edit')
+%header.page-heading
+  .container
+    %h1
+      %i.fa.fa-envelope
+      = t('nav.emails.edit')
+.container.body
+  - if @user.errors.present?
+    .alert.alert-danger= @user.errors.full_messages.join('')
+  .section
+    - if @user.email.present?
+      .label-email-wrapper
+        %span.label.label-default.label-email
+          %span.label-inner= t('.email')
+          = @user.email
+    - else
+      .alert.alert-danger
+        %i.fa.fa-exclamation-triangle
+        = t('.unregistered')
+  - if @user.valid? && @user.unconfirmed_email.present?
+    .section
+      .panel.panel-danger
+        .panel-heading
+          %i.fa.fa-exclamation-triangle
+          = t('.unconfirmed')
+        .panel-body
+          %p.text-danger
+            = t('.promote_confirmation')
+          .label-email-wrapper
+            %span.label.label-default.label-email
+              %span.label-inner= t('.unconfirmed_email')
+              = @user.unconfirmed_email
+  .section
+    %h3
+      = t(".form.title.#{@user.email.present? ? 'update' : 'register'}")
+    = form_tag my_email_path, method: :put, class: 'form-inline form-inline-large', role: 'form' do
+      .form-group
+        = text_field_tag :email, nil, class: 'form-control email', placeholder: 'mail@example.com'
+      .form-group
+      = submit_tag t('.form.submit'), class: 'btn btn-primary'
+    %p.help-block
+      = t('.form.help')

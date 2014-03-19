@@ -11,3 +11,7 @@ en:
   site_info:
     title: 'pplog'
     description: 'Write down your private poem freely. But you can save only one poem. No more social networking services.'
+  nav:
+    emails:
+      edit: 'Update your e-mail address'
+      finish: 'A confirmation email will be sent'

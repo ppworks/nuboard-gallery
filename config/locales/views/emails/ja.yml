@@ -1,0 +1,22 @@
+ja:
+  emails:
+    updated: '確認メールを送信しました。メールに含まれるURLをクリックしメールアドレスの変更を完了して下さい。'
+    confirmation:
+      complete: 'メールアドレスを変更しました。'
+      error: '有効なURLではありません。'
+    edit:
+      email: 'あなたのメールアドレス'
+      unconfirmed_email: '申請中のメールアドレス'
+      unconfirmed: 'こちらのメールアドレスはまだ承認を完了していません'
+      promote_confirmation: '送信済みのメールを確認して承認を完了してください。'
+      unregistered: 'まだメールアドレスが登録されていません'
+      form:
+        title:
+          register: 'メールアドレスを登録する'
+          update: 'メールアドレスを変更する'
+        help: '送信後に送られる確認用のメールから、メールアドレスの承認を完了してください。'
+        submit: '送信'
+    notice:
+      title: 'メールアドレスを設定しましょう'
+    finish:
+      title: '確認メールを送信しました'

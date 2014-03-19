@@ -1,0 +1,4 @@
+<%= @user.name %> さん
+
+下記リンクをクリック頂くと、メールアドレスの更新が完了します。
+<%= confirmation_my_email_url(@user.hash_to_confirm_email) %>

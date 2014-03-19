@@ -1,0 +1,22 @@
+en:
+  emails:
+    updated: 'Sent an email to confrim your e-mail address. Please click the URL in email'
+    confirmation:
+      complete: 'Your e-mail address is updated'
+      error: 'Invalid URL'
+    edit:
+      email: 'Current e-mail address'
+      unconfirmed_email: 'Unconfirmed e-mail address'
+      unconfirmed: 'Your e-mail address has not been confirmed yet'
+      promote_confirmation: 'Confirm your e-mail address. We sent you an email. Please check it.'
+      unregistered: 'Your e-mail address has not been registered yet'
+      form:
+        title:
+          register: 'Register your e-mail address'
+          update: 'Update your e-mail address'
+        help: 'Confirm your e-mail address. We will send you an email after your submitting. Please check it.'
+        submit: 'Submit'
+    notice:
+      title: 'Your e-mail is empty'
+    finish:
+      title: 'Sent a confirmation email'

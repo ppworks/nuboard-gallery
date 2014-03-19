@@ -1,1 +1,7 @@
 Welcome
+- if user_signed_in?
+  = image_tag(current_user.image)
+- else
+  = link_to user_omniauth_authorize_path(:twitter) do
+    %i.fa.fa-twitter
+    Sign in with twitter

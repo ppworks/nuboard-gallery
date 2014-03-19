@@ -5,7 +5,15 @@ ja:
         invalid_email_address: 'does not appear to be a valid E-mail address'
   activerecord:
     models:
+      user: 'ユーザー'
     attributes:
+      user:
+        name: 'ユーザー名'
+        email: 'メールアドレス'
+        unconfirmed_email: '新しいメールアドレス'
+        image: 'ユーザー画像'
+        locale: '言語設定'
+        content: '自己紹介文'
     errors:
       models:
   enumerize:

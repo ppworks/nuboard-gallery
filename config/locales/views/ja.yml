@@ -11,3 +11,7 @@ ja:
   site_info:
     title: 'pplog'
     description: '最新の一件しか残せないゆるふわインターネットに、ポエムを刻もう。'
+  nav:
+    emails:
+      edit: 'メールアドレス設定'
+      finish: '確認メール送信完了'

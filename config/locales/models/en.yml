@@ -5,7 +5,15 @@ en:
         invalid_email_address: 'does not appear to be a valid E-mail address'
   activerecord:
     models:
+      user: 'User'
     attributes:
+      user:
+        name: 'User name'
+        email: 'E-mail Address'
+        unconfirmed_email: 'New E-mail Address'
+        image: 'User image'
+        locale: 'Locale Settings'
+        content: 'Self-introduction'
     errors:
       models:
   enumerize:
