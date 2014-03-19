@@ -90,6 +90,11 @@ RSpec.configure do |config|
   # metadata setting
   config.treat_symbols_as_metadata_keys_with_true_values = true
 
+  # User model
+  config.before do
+    User.any_instance.stub(:save_to_s3).and_return(nil)
+  end
+
   config.before(:all) do
     FactoryGirl.reload
   end

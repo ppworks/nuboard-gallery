@@ -37,7 +37,6 @@ module Storable
     storable_url = "#{ENV['CDN_HOST']}/#{path_to_save}"
     self.update_column(self.storable_file_column, storable_url)
   rescue => e
-    binding.pry
     Bugsnag.notify(e) if Rails.env.production?
   end
 

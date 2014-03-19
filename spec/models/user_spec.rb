@@ -5,7 +5,7 @@ describe User do
   let(:user) { create(:user, connections: [connection]) }
   let(:valid_auth_hash) {
     {
-      'provider' => 'twitter',
+      'provider' => 'github',
       'uid' => '123456',
       'info' => {
         'nickname' => 'ppworks',
@@ -85,7 +85,6 @@ describe User do
           it { should be_instance_of User }
         end
       end
-      it { expect(subject.image).to match '_bigger' }
     end
   end
 

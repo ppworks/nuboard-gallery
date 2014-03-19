@@ -47,32 +47,7 @@ class User < ActiveRecord::Base
       return user
     end
 
-    def friend_image(nickname)
-      user = Connection.nicknamed(nickname).first.try(:user)
-      return user.image if user
-      fetch_friend_image(nickname)
-    end
-
     private
-    def fetch_friend_image(nickname)
-      Rails.cache.fetch("User#fetch_friend_image(#{nickname})", expires_in: 1.hour) do
-        client = Twitter::REST::Client.new do |config|
-          config.consumer_key        = Figaro.env.twitter_app_id
-          config.consumer_secret     = Figaro.env.twitter_app_secret
-        end
-
-        if client
-          begin
-            friend = client.user(nickname)
-          rescue
-          end
-          if friend
-            friend.profile_image_url_https
-          end
-        end
-      end
-    end
-
     def generate_token(column_name)
       loop do
         token = Devise.friendly_token.gsub(/-/,'_')

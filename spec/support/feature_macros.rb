@@ -5,7 +5,7 @@ module FeatureMacros
   included do
     let(:auth_hash) {
       {
-        'provider' => 'twitter',
+        'provider' => 'github',
         'uid' => '12345',
         'info' => {
           'nickname' => 'ppworks',
