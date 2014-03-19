@@ -1,4 +1,4 @@
-Genuineblue::Application.configure do
+NuboardGallery::Application.configure do
   require 'newrelic_rpm'
   # Settings specified here will take precedence over those in config/application.rb.
 

@@ -1,4 +1,4 @@
-# genuineblue tempate application for rails4
+# Nuboard Gallery
 
 ## Setup for development
 
@@ -31,25 +31,25 @@ $ guard
 ## heroku
 
 ```
-heroku create genuineblue
-git remote rename heroku genuineblue
-git push genuineblue master
+heroku create nuboard-gallery
+git remote rename heroku nuboard-gallery
+git push nuboard-gallery master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
-rake figaro:heroku\[genuineblue\]
+rake figaro:heroku\[nuboard-gallery\]
 ```
 
 ### staging
 
 ```
-heroku create genuineblue-stg
-git remote set-url genuineblue-stg git@heroku.com:genuineblue-stg.git
-git push genuineblue master
+heroku create nuboard-gallery-stg
+git remote set-url nuboard-gallery-stg git@heroku.com:nuboard-gallery-stg.git
+git push nuboard-gallery master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
 heroku addons:add mailtrap
 heroku config:set RACK_ENV=staging RAILS_ENV=staging
-rake figaro:heroku\[genuineblue-stg\]
+rake figaro:heroku\[nuboard-gallery-stg\]
 ```

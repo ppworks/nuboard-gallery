@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Genuineblue::Application.load_tasks
+NuboardGallery::Application.load_tasks

@@ -1,3 +1,3 @@
-Genuineblue::Application.routes.draw do
+NuboardGallery::Application.routes.draw do
   root to: 'pages#index'
 end
