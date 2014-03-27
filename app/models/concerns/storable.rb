@@ -1,4 +1,3 @@
-require 'open-uri'
 module Storable
   extend ActiveSupport::Concern
 
@@ -31,10 +30,11 @@ module Storable
     dir = self.class.to_s.tableize
     path_to_save = "#{dir}/#{self.storable_file_column.to_s}/#{self.try(:id)||0 % 1000}/#{self.try(:id)}#{Time.current.to_i}"
 
-    file = bucket.files.create(key: path_to_save, public: true, body: open(save_file))
-    create_thumbnail(bucket, path_to_save, save_file)
+    file = bucket.files.create(key: path_to_save, public: true, body: open_file_over_ssl(save_file))
 
     storable_url = "#{ENV['CDN_HOST']}/#{path_to_save}"
+    create_thumbnail(bucket, path_to_save, storable_url)
+
     self.update_column(self.storable_file_column, storable_url)
   rescue => e
     Bugsnag.notify(e) if Rails.env.production?
@@ -44,12 +44,25 @@ module Storable
     new_file = self.send(storable_file_column)
     old_file = self.send("#{storable_file_column}_was")
     return true unless old_file
-    return true unless Digest::MD5.hexdigest(open(new_file).read) == Digest::MD5.hexdigest(open(old_file).read)
+    return true unless Digest::MD5.hexdigest(open_file_over_ssl(new_file).read) == Digest::MD5.hexdigest(open_file_over_ssl(old_file).read)
   rescue
     return true
   else
     self[storable_file_column] = old_file
     return false
+  end
+
+  # herokuでsslをopenすると
+  # OpenSSL::SSL::SSLError: SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: (null)
+  # で落ちるので
+  def open_file_over_ssl(save_file)
+    uri = URI(save_file)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.ssl_version = :SSLv3
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    response = http.get(uri)
+    response.body
   end
 
   def create_thumbnail(bucket, path_to_save, save_file)
