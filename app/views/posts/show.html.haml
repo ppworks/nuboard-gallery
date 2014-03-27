@@ -1,0 +1,5 @@
+%h1= @post.title
+
+%ul
+  = content_tag_for(:li, @post.post_images) do |post_image|
+    = image_tag(post_image.image_url)

@@ -1,0 +1,10 @@
+= form_for(@post, html: { multipart: true }) do |f|
+  = f.text_field :title
+  = f.fields_for :post_images do |builder|
+    = render('post_image_fields', f: builder)
+  .control-group
+    %label.control-label
+    .controls
+      = link_to_add_fields t('.add_field'), f, :post_images
+
+  = f.submit(nil, class: 'btn btn-primary')

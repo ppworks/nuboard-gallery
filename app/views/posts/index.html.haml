@@ -1,0 +1,6 @@
+%ul
+  = content_tag_for(:li, @posts) do |post|
+    %h3= link_to(post.title, post)
+    %ul.flatten-list
+      = content_tag_for(:li, post.post_images) do |post_image|
+        = image_tag(post_image.image.thumb.url)
