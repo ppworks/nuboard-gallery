@@ -34,6 +34,7 @@ describe User do
 
   describe 'relations' do
     it { should have_many(:connections) }
+    it { should have_many(:posts) }
   end
 
   describe '.authentication' do

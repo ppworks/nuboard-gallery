@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :rememberable, :trackable, :omniauthable
 
   has_many :connections, dependent: :delete_all
+  has_many :posts, dependent: :delete_all
 
   validates :email, email_format: {allow_nil: true}
   validates :unconfirmed_email, email_format: {allow_nil: true}

@@ -6,6 +6,7 @@ en:
   activerecord:
     models:
       user: 'User'
+      post: 'Nu'
     attributes:
       user:
         name: 'User name'
@@ -14,6 +15,8 @@ en:
         image: 'User image'
         locale: 'Locale Settings'
         content: 'Self-introduction'
+      post:
+        title: 'Title'
     errors:
       models:
   enumerize:
