@@ -32,6 +32,7 @@ gem 'validates_email_format_of'
 gem 'unf'
 gem 'fog'
 gem 'mini_magick'
+gem 'carrierwave'
 
 # Views
 gem 'bootstrap-sass'

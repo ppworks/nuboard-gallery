@@ -9,5 +9,6 @@ describe Post do
 
   describe 'relations' do
     it { should belong_to(:user) }
+    it { should have_many(:post_images) }
   end
 end
