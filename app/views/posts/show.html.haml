@@ -2,4 +2,5 @@
 
 %ul
   = content_tag_for(:li, @post.post_images) do |post_image|
-    = image_tag(post_image.image_url)
+    = link_to(post_image.image_url, target: '_blank') do
+      = image_tag(post_image.image.thumb.url, width: '100')

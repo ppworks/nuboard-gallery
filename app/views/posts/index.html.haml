@@ -3,4 +3,4 @@
     %h3= link_to(post.title, post_path(post.hash_key))
     %ul.flatten-list
       = content_tag_for(:li, post.post_images) do |post_image|
-        = image_tag(post_image.image.thumb.url)
+        = image_tag(post_image.image.thumb.url, width: 100)
