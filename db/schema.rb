@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327014353) do
+ActiveRecord::Schema.define(version: 20140327023728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(version: 20140327014353) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "hash_key",   null: false
   end
+
+  add_index "posts", ["hash_key"], name: "index_posts_on_hash_key", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"

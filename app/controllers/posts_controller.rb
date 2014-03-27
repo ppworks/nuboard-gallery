@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post.attributes = post_params
     if @post.save
-      redirect_to post_path(@post), notice: 'updated'
+      redirect_to post_path(@post.hash_key), notice: 'updated'
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(hash_key: params[:id])
   end
 
   def set_post_for_save
