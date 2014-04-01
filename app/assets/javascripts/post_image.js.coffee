@@ -20,7 +20,7 @@ class PostImage
       $(@elements).each (i, element) ->
         width += $(element).width()
       $('html, body').css('width', width)
-    , 500
+    , 1000
 
 
   update_height: =>
