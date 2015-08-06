@@ -30,5 +30,6 @@ erd.pdf
 pickle-email-*.html
 public/assets
 public/assets-test
+public/uploads
 rerun.txt
 spec/tmp

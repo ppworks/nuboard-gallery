@@ -1,0 +1,9 @@
+%h1
+  = @post.title
+- if user_signed_in? && @post.user == current_user
+  = link_to edit_post_path(@post) do
+    %i.fa.fa-pencil
+%ul.post-images.flatten-list
+  = content_tag_for(:li, @post.post_images) do |post_image|
+    = image_tag(post_image.image_url, class: 'image')
+

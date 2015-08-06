@@ -1,0 +1,5 @@
+= form_for(@post, html: { multipart: true }) do |f|
+  = f.text_field :title
+  = file_field_tag('post[post_images_attributes][][image]', multiple: true)
+
+  = f.submit(nil, class: 'btn btn-primary')

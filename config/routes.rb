@@ -11,8 +11,10 @@ NuboardGallery::Application.routes.draw do
       end
     end
   end
+
+  resources :posts
   authenticated :user do
-    root 'pages#index', as: :authenticated_user_root
+    root 'posts#index', as: :authenticated_user_root
   end
   root to: 'pages#index'
 end
